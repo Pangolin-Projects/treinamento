@@ -6,7 +6,7 @@ namespace Calculadora
     {
         static void Main(string[] args)
         {   
-            RodarPrograma();
+            TesteBhaskara();
         }
 
 
@@ -80,6 +80,20 @@ namespace Calculadora
             Console.WriteLine($"O resultado é: {n1 / n2}");
         }
 
+        static int[] Bhaskara(int a, int b, int c){
+            int delta = (b * b) - 4 * a * c; 
+            int x1 = ( - b + (int)Math.Sqrt(delta) ) / (2 * a);
+            int x2 = ( - b - (int)Math.Sqrt(delta) ) / (2 * a);
+            return [x1, x2];
+            } 
+
+        static void TesteBhaskara(){
+           int a = 1;
+           int b = 8;
+           int c = -9;
+            int[] numeros = Bhaskara(a, b, c);
+            Console.WriteLine("X1 é =" + numeros[0] + " X2 é =" + numeros[1]);
+        }
 
     }
 }
